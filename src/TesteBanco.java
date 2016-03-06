@@ -8,7 +8,7 @@ public class TesteBanco {
 		//Agencia agencia = new Agencia();
 		//Cliente cliente = new Cliente();
 		//Banco banco = new Banco("null", 0, null, 0);
-		System.out.println("Menu");
+		System.out.println("MenuBanco");
 	}
 
 
