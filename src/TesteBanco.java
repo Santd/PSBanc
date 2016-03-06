@@ -1,3 +1,4 @@
+package br.ufs.projeto
 
 public class TesteBanco {
 	
