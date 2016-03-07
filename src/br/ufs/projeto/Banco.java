@@ -1,10 +1,10 @@
 package br.ufs.projeto;
 
 public class Banco {
-	
+
 	private String nome;
 	private int codigo;
-	Agencia agencia;
+	private Agencia agencia;
 	private double montante;
 
 	public Banco(String nome, int codigo, Agencia agencia, double montante) {

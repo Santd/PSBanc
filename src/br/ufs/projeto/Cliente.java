@@ -5,8 +5,8 @@ public class Cliente {
 	private String nome;
 	private String endereco;
 	private int idade;
-	Agencia agencia;
-	Conta conta;
+	private Agencia agencia;
+	private Conta conta;
 	private int id;
 
 	public Cliente() {

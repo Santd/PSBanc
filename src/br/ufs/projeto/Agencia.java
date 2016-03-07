@@ -3,7 +3,7 @@ package br.ufs.projeto;
 public class Agencia {
 	
 	private int codigo;
-	Cliente cliente;
+	private Cliente cliente;
 	private double montante;
 	
 	public Agencia() {
