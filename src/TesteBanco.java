@@ -15,7 +15,8 @@ public class TesteBanco {
 		int agenciaEscolhida;
 		int opcao = 0;
 		byte sairContinuar = 0;
-		
+		int i = 0;
+
 		//Total de agências: 3
 		Agencia agencia1 = new Agencia(2048);
 		banco.setAgencia(agencia1);
@@ -55,10 +56,10 @@ public class TesteBanco {
 		agencia3.setCliente(cliente8);
 		Cliente cliente9 = new Cliente("Maria Souza", 45, conta10, 1050);
 		agencia3.setCliente(cliente9);
-		
-		
+
+
 		do {
-			
+
 			System.out.println(banco.getNome()+"\nCódigo: "+banco.getCodigo()+"\n");
 			System.out.println("Menu\n");
 			System.out.println("Digite uma das seguintes opções:");
@@ -80,31 +81,41 @@ public class TesteBanco {
 				System.out.println("Agência cód.: "+agencia1.getCodigo());
 				System.out.println("Agência cód.: "+agencia2.getCodigo());
 				System.out.println("Agência cód.: "+agencia3.getCodigo());
-				agenciaEscolhida = input.nextByte();
+				agenciaEscolhida = input.nextInt();
 
 				if(agenciaEscolhida == agencia1.getCodigo() ){
 					System.out.println("Montante de dinheiro aplicado na Agência"
 							+agencia1.getCodigo()+" é R$ "+agencia1.MontanteNaAgencia());	
 				}
-				
+
 				if(agenciaEscolhida == agencia2.getCodigo() ){
 					System.out.println("Montante de dinheiro aplicado na Agência"
 							+agencia2.getCodigo()+" é R$ "+agencia2.MontanteNaAgencia());	
 				}
-				
+
 				if(agenciaEscolhida == agencia3.getCodigo() ){
 					System.out.println("Montante de dinheiro aplicado na Agência"
 							+agencia3.getCodigo()+" é R$ "+agencia3.MontanteNaAgencia());	
 				}
 				break;
-
+			case 3:
+				System.out.println("Informe o nome do cliente:");
+				String nome = input.next();
+				System.out.println("Informe a agência:");
+				int codigo = input.nextInt();
+				System.out.println("Saldo do cliente é de R$ "+banco.getAgencia()[i].ExibirSaldo(nome, codigo));
+				break;
 			default:
 				break;
 			}
 			System.out.println();
+			System.out.println();
 			System.out.println("Para sair do sistema aperte '1' para continuar aperte '0' ");
 			sairContinuar = input.nextByte();
+			System.out.println();
+			System.out.println();
 		} while (sairContinuar != 1);
-		
+		System.out.println("Fim do Programa!");
 	}
+
 }

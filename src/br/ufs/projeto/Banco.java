@@ -50,9 +50,11 @@ public class Banco {
 	
 	public double CalcularMontante(){
 		double somaMontante = 0;
+		
 		for (int i = 0; i < agencia.length; i++) {
 			somaMontante = somaMontante + agencia[i].MontanteNaAgencia();
 		}
+		
 		return somaMontante;
 	}
 
