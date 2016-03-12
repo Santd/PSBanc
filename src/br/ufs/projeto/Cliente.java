@@ -3,56 +3,69 @@ package br.ufs.projeto;
 public class Cliente {
 	
 	private String nome;
-	private String endereco;
 	private int idade;
-	private Agencia agencia;
-	private Conta conta;
-	private int id;
+	//private Agencia agencia;
+	private Conta[] conta = new Conta[2];
+	private int numIdentificador;
+	private int i;
+	private int j;
 
-	public Cliente() {
-		this.nome = null;
-		this.endereco = null;
-		this.idade = 0;
-		this.agencia = null;
-		this.conta = null;
-		this.id = 0;
+	public Cliente(String nome, int idade, Conta conta, int numIdentificador) {
+		this.nome = nome;
+		this.idade = idade;
+		//this.agencia = agencia;
+		this.conta[i] = conta;
+		this.numIdentificador = numIdentificador;
+	}
+	
+	public Cliente(String nome, int idade, Conta conta1, Conta conta2, int numIdentificador) {
+		this.nome = nome;
+		this.idade = idade;
+		//this.agencia = agencia;
+		this.conta[i] = conta1;
+		this.conta[i++] = conta2;
+		this.numIdentificador = numIdentificador;
 	}
 	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public void setIdade(byte idade) {
+	
+	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public void setAgencia(Agencia agencia) {
+	
+	/*public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
-	}
+	}*/
+	
 	public void setConta(Conta conta) {
-		this.conta = conta;
+		this.conta[j] = conta;
+		j++;
 	}
-	public void setId(int id) {
-		this.id = id;
+	
+	public void setNumeroIdentificador(int numeroIdentificador ) {
+		this.numIdentificador = numeroIdentificador;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
-	public String getEndereco() {
-		return endereco;
-	}
+	
 	public int getIdade() {
 		return idade;
 	}
-	public Agencia getAgencia() {
+	
+	/*public Agencia getAgencia() {
 		return agencia;
-	}
-	public Conta getConta() {
+	}*/
+	
+	public Conta[] getConta() {
 		return conta;
 	}
-	public int getId() {
-		return id;
+	
+	public int getNumeroIdentificador() {
+		return numIdentificador;
 	}
 
 }

@@ -4,14 +4,15 @@ public class Banco {
 
 	private String nome;
 	private int codigo;
-	private Agencia agencia;
+	private Agencia[] agencia;
 	private double montante;
+	private int numAgencia;
 
-	public Banco(String nome, int codigo, Agencia agencia, double montante) {
-		this.nome = nome;
-		this.codigo = codigo;
-		this.agencia = agencia;
-		this.montante = montante;
+	public Banco() {
+		this.nome = "BancoBD";
+		this.codigo = 220;
+		this.agencia = new Agencia[3];
+		this.montante = 0;
 	}
 
 	public void setNome(String nome) {
@@ -23,7 +24,8 @@ public class Banco {
 	}
 
 	public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
+		this.agencia[numAgencia] = agencia;
+		numAgencia++;
 	}
 
 	public void setMontante(double montante) {
@@ -38,12 +40,20 @@ public class Banco {
 		return codigo;
 	}
 
-	public Agencia getAgencia() {
+	public Agencia[] getAgencia() {
 		return agencia;
 	}
 
 	public double getMontante() {
 		return montante;
+	}
+	
+	public double CalcularMontante(){
+		double somaMontante = 0;
+		for (int i = 0; i < agencia.length; i++) {
+			somaMontante = somaMontante + agencia[i].MontanteNaAgencia();
+		}
+		return somaMontante;
 	}
 
 }

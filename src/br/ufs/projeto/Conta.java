@@ -5,9 +5,9 @@ public class Conta {
 	private int codigo;
 	private double saldo;
 
-	public Conta() {
-		this.codigo = 0;
-		this.saldo = 0;
+	public Conta(int codigo, double saldo) {
+		this.codigo = codigo;
+		this.saldo = saldo;
 	}
 
 	public void setCodigo(int codigo) {
@@ -44,5 +44,10 @@ public class Conta {
 			System.out.println("Saldo insuficiente!");
 
 	}//método para sacar
-
+	
+	public void fazerTransferencia(Conta destinatario, double valorTransferido){
+		this.saldo = this.saldo - valorTransferido;
+		destinatario.saldo = destinatario.saldo + valorTransferido; 
+	}
+	
 }

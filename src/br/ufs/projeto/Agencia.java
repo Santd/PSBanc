@@ -1,15 +1,16 @@
 package br.ufs.projeto;
 
 public class Agencia {
-	
+
 	private int codigo;
-	private Cliente cliente;
-	private double montante;
-	
-	public Agencia() {
-		this.codigo = 0;
-		this.cliente = null;
-		this.montante = 0;
+	private Cliente[] cliente;
+	//private double montante;
+	int i;
+
+	public Agencia(int codigo) {
+		this.codigo = codigo;
+		this.cliente = new Cliente[3];
+	//	this.montante = montante;
 	}
 
 	public void setCodigo(int codigo) {
@@ -17,23 +18,32 @@ public class Agencia {
 	}
 
 	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+		this.cliente[i] = cliente;
+		i++;
 	}
 
-	public void setMontante(double montante) {
+	/*public void setMontante(double montante) {
 		this.montante = montante;
-	}
+	}*/
 
 	public int getCodigo() {
 		return codigo;
 	}
 
-	public Cliente getCliente() {
+	public Cliente[] getCliente() {
 		return cliente;
 	}
 
-	public double getMontante() {
+	/*public double getMontante() {
 		return montante;
+	}*/
+
+	public double MontanteNaAgencia() {
+		double somaMontanteAgencia = 0;
+		for (int i = 0; i < cliente.length; i++) {
+			somaMontanteAgencia = somaMontanteAgencia + cliente[i].getConta()[i].getSaldo();
+		}
+		return somaMontanteAgencia;
 	}
 
 }
