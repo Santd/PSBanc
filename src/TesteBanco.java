@@ -16,9 +16,9 @@ public class TesteBanco {
 		int opcao = 0;
 		byte sairContinuar = 0;
 		int i = 0;
-		String nomeCliente;
-		int numeroIdentificacao;
+		int idCliente;
 		int codigoAgencia;
+		double valorTrasferido;
 		
 		//Total de agências: 3
 		Agencia agencia1 = new Agencia(2048);
@@ -110,9 +110,30 @@ public class TesteBanco {
 				
 				System.out.println("Informe o código da agência:");
 				codigoAgencia = input.nextInt();
-				System.out.println("Informe o nome do cliente:");
-				nomeCliente = input.nextLine();
-				System.out.println("Saldo do cliente é de R$ "+banco.ExibirSaldoB(nomeCliente, codigoAgencia));
+				System.out.println("Informe o nº de identificação do cliente:");
+				idCliente = input.nextInt();
+				System.out.println("Saldo do cliente é de R$ "+banco.ExibirSaldoB(idCliente, codigoAgencia));
+				break;
+				
+			case 4:
+				
+				break;
+				
+			case 5:
+				
+				
+				break;
+			
+			case 6:
+				
+				System.out.println("Informe o valor a ser trasferido: ");
+				valorTrasferido = input.nextDouble();
+				
+				
+				break;
+				
+			case 7:
+				
 				break;
 				
 			default:

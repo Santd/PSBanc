@@ -58,12 +58,12 @@ public class Banco {
 		return somaMontante;
 	}
 	
-	public double ExibirSaldoB(String nome, int codigo) {
+	public double ExibirSaldoB(int idCliente, int codigo) {
 		double saldo = 0;
 		
 		for (int i = 0; i < agencia.length; i++) {
 			if (agencia[i].getCodigo() == codigo ) {
-				agencia[i].BuscarCliente(nome);
+				agencia[i].BuscarCliente(idCliente);
 				break;
 			}
 		}

@@ -45,7 +45,7 @@ public class Conta {
 
 	}//método para sacar
 	
-	public void fazerTransferencia(Conta destinatario, double valorTransferido){
+	public void fazerTransferencia(double valorTransferido, Conta destinatario){
 		this.saldo = this.saldo - valorTransferido;
 		destinatario.saldo = destinatario.saldo + valorTransferido; 
 	}

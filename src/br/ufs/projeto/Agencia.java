@@ -44,14 +44,14 @@ public class Agencia {
 		return somaMontanteAgencia;
 	}
 
-	public double BuscarCliente(String nome) {
+	public double BuscarCliente(int idCliente) {
 		double saldo = 0;
 		boolean achou = false;
 		int j;
 		int posicao = 0;
 
 		for (j = 0; j < this.cliente.length; j++) {
-			if (cliente[j].getNome() == nome){ 
+			if (cliente[j].getNumeroIdentificador() == idCliente){ 
 				achou = true;
 				posicao = j;
 			}

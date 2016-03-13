@@ -4,7 +4,6 @@ public class Cliente {
 	
 	private String nome;
 	private int idade;
-	//private Agencia agencia;
 	private Conta[] conta = new Conta[2];
 	private int numIdentificador;
 	private int i;
@@ -14,7 +13,6 @@ public class Cliente {
 	public Cliente(String nome, int idade, Conta conta, int numIdentificador) {
 		this.nome = nome;
 		this.idade = idade;
-		//this.agencia = agencia;
 		this.conta[i] = conta;
 		this.numIdentificador = numIdentificador;
 		this.quantContas = 1;
@@ -23,7 +21,6 @@ public class Cliente {
 	public Cliente(String nome, int idade, Conta conta1, Conta conta2, int numIdentificador) {
 		this.nome = nome;
 		this.idade = idade;
-		//this.agencia = agencia;
 		this.conta[i] = conta1;
 		this.conta[i+1] = conta2;
 		this.numIdentificador = numIdentificador;
@@ -37,10 +34,6 @@ public class Cliente {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	
-	/*public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
-	}*/
 	
 	public void setConta(Conta conta) {
 		this.conta[j] = conta;
@@ -59,10 +52,6 @@ public class Cliente {
 		return idade;
 	}
 	
-	/*public Agencia getAgencia() {
-		return agencia;
-	}*/
-	
 	public Conta[] getConta() {
 		return conta;
 	}
@@ -74,5 +63,4 @@ public class Cliente {
 	public int getQuantContas() {
 		return quantContas;
 	}
-
 }
