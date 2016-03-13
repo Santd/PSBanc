@@ -16,7 +16,10 @@ public class TesteBanco {
 		int opcao = 0;
 		byte sairContinuar = 0;
 		int i = 0;
-
+		String nomeCliente;
+		int numeroIdentificacao;
+		int codigoAgencia;
+		
 		//Total de agências: 3
 		Agencia agencia1 = new Agencia(2048);
 		banco.setAgencia(agencia1);
@@ -73,10 +76,14 @@ public class TesteBanco {
 			opcao = input.nextByte();
 
 			switch (opcao) {
+			
 			case 1:
+				
 				System.out.println("Montante de dinheiro aplicado no banco é R$ "+banco.CalcularMontante());
 				break;
+				
 			case 2:
+				
 				System.out.println("Digite o código correspondente a uma das agências: ");
 				System.out.println("Agência cód.: "+agencia1.getCodigo());
 				System.out.println("Agência cód.: "+agencia2.getCodigo());
@@ -98,22 +105,28 @@ public class TesteBanco {
 							+agencia3.getCodigo()+" é R$ "+agencia3.MontanteNaAgencia());	
 				}
 				break;
+				
 			case 3:
+				
+				System.out.println("Informe o código da agência:");
+				codigoAgencia = input.nextInt();
 				System.out.println("Informe o nome do cliente:");
-				String nome = input.next();
-				System.out.println("Informe a agência:");
-				int codigo = input.nextInt();
-				System.out.println("Saldo do cliente é de R$ "+banco.getAgencia()[i].ExibirSaldo(nome, codigo));
+				nomeCliente = input.nextLine();
+				System.out.println("Saldo do cliente é de R$ "+banco.ExibirSaldoB(nomeCliente, codigoAgencia));
 				break;
+				
 			default:
 				break;
+				
 			}
+			
 			System.out.println();
 			System.out.println();
 			System.out.println("Para sair do sistema aperte '1' para continuar aperte '0' ");
 			sairContinuar = input.nextByte();
 			System.out.println();
 			System.out.println();
+			
 		} while (sairContinuar != 1);
 		System.out.println("Fim do Programa!");
 	}
