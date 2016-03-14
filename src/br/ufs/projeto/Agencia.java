@@ -44,7 +44,7 @@ public class Agencia {
 		return somaMontanteAgencia;
 	}
 
-	public double BuscarCliente(int idCliente) {
+	public double buscarCliente(int idCliente) {
 		double saldo = 0;
 		boolean achou = false;
 		int j;
@@ -70,4 +70,31 @@ public class Agencia {
 		return saldo;
 	}
 
+	public double procurarCliente(int idCliente) {
+		double saldo = 0;
+		boolean achou = false;
+		int j;
+		int posicao = 0;
+
+		for (j = 0; j < this.cliente.length; j++) {
+			if (cliente[j].getNumeroIdentificador() == idCliente){ 
+				achou = true;
+				posicao = j;
+			}
+		}	
+
+		if (achou == true){
+			if (cliente[posicao].getQuantContas() == 1) {
+				for (j = 0; j < cliente[posicao].getQuantContas(); j++) 
+					System.out.println("Saldo do cliente é de R$ "+cliente[posicao].getConta()[j].getSaldo());
+			}else
+				for (j = 0; j < cliente[posicao].getQuantContas(); j++)
+					System.out.println("Saldo do cliente na conta nº: "+cliente[posicao].getConta()[j].getCodigo()+
+							" é de R$ "+cliente[posicao].getConta()[j].getSaldo());
+		}
+
+		return saldo;
+	}
+
+	
 }

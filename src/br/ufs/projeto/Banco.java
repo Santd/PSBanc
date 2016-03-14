@@ -47,29 +47,27 @@ public class Banco {
 	public double getMontante() {
 		return montante;
 	}
-	
+
 	public double CalcularMontante(){
 		double somaMontante = 0;
-		
+
 		for (int i = 0; i < agencia.length; i++) {
 			somaMontante = somaMontante + agencia[i].MontanteNaAgencia();
 		}
-		
+
 		return somaMontante;
 	}
-	
-	public double ExibirSaldoB(int idCliente, int codigo) {
+
+	public double exibirSaldoB(int idCliente, int codigo) {
 		double saldo = 0;
-		
+
 		for (int i = 0; i < agencia.length; i++) {
 			if (agencia[i].getCodigo() == codigo ) {
-				agencia[i].BuscarCliente(idCliente);
+				agencia[i].buscarCliente(idCliente);
 				break;
 			}
 		}
 		return saldo;
 	}
-	
-	
 
 }
