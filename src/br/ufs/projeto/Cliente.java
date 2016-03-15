@@ -1,10 +1,15 @@
 package br.ufs.projeto;
+/**
+ * 
+ * @author 
+ *@since 11/03/2016
+ */
 
 public class Cliente {
 	
 	private String nome;
 	private int idade;
-	private Conta[] conta = new Conta[2];
+	private Conta[] conta = new Conta[10];
 	private int numIdentificador;
 	private int i;
 	private int j;
@@ -16,6 +21,12 @@ public class Cliente {
 		this.conta[i] = conta;
 		this.numIdentificador = numIdentificador;
 		this.quantContas = 1;
+	}
+	
+	public Cliente(String nome, int idade, int numIdentificador) {
+		this.nome = nome;
+		this.idade = idade;
+		this.numIdentificador = numIdentificador;
 	}
 	
 	public Cliente(String nome, int idade, Conta conta1, Conta conta2, int numIdentificador) {

@@ -11,7 +11,7 @@ public class TesteBanco {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		Banco banco = new Banco();
+		Banco banco = new Banco("Banco A", 220);
 		int agenciaEscolhida;
 		int opcao = 0;
 		byte sairContinuar = 0;

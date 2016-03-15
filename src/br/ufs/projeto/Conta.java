@@ -1,5 +1,12 @@
 package br.ufs.projeto;
 
+/**
+ * 
+ * @author
+ * @since 11/03/2016
+ *
+ */
+
 public class Conta {
 
 	private int codigo;

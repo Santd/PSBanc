@@ -1,14 +1,26 @@
 package br.ufs.projeto;
 
+import java.util.Random;
+
+/**
+ * 
+ * @author 
+ *@since 11/03/2016
+ */
+
 public class Agencia {
 
 	private int codigo;
 	private Cliente[] cliente;
-	int i;
+	int novoCliente = 0;
 
 	public Agencia(int codigo) {
 		this.codigo = codigo;
-		this.cliente = new Cliente[3];
+		this.cliente = new Cliente[100];
+	}
+
+	public Agencia() {
+		System.out.println("agencia criada!");
 	}
 
 	public void setCodigo(int codigo) {
@@ -16,8 +28,8 @@ public class Agencia {
 	}
 
 	public void setCliente(Cliente cliente) {
-		this.cliente[i] = cliente;
-		i++;
+		this.cliente[novoCliente] = cliente;
+		novoCliente++;
 	}
 
 	public int getCodigo() {
@@ -27,11 +39,17 @@ public class Agencia {
 	public Cliente[] getCliente() {
 		return cliente;
 	}
+	
+	public void cadastrarCliente(String nome, int idade) {
+		Random idAleatorio = new Random();
+		Cliente cliente = new Cliente(nome, idade, idAleatorio.nextInt(200));
+		
+	}
 
 	public double MontanteNaAgencia() {
 		double somaMontanteAgencia = 0;
 
-		for (int i = 0; i < cliente.length; i++) {
+		for (int i = 0; i < novoCliente; i++) {
 			if (cliente[i].getQuantContas() == 1) 
 				for (int j = 0; j < cliente[i].getQuantContas(); j++) {
 					somaMontanteAgencia = somaMontanteAgencia + cliente[i].getConta()[j].getSaldo();
@@ -50,7 +68,7 @@ public class Agencia {
 		int j;
 		int posicao = 0;
 
-		for (j = 0; j < this.cliente.length; j++) {
+		for (j = 0; j < this.novoCliente; j++) {
 			if (cliente[j].getNumeroIdentificador() == idCliente){ 
 				achou = true;
 				posicao = j;
@@ -94,7 +112,5 @@ public class Agencia {
 		}
 
 		return saldo;
-	}
-
-	
+	}	
 }
