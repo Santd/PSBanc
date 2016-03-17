@@ -1,12 +1,12 @@
 package br.ufs.projeto;
 
 import java.util.Random;
+import java.util.Scanner;
 /**
  * 
- * @author 
+ * @author DANIELA DOS SANTOS E TAYLAN NALIMAR CRUZ CELESTINO
  *@since 11/03/2016
  */
-import java.util.Scanner;
 
 public class Banco {
 
@@ -59,11 +59,10 @@ public class Banco {
 	}
 
 
-	/**Método para criação de novas agências em um banco
+	/**MÉTODO PARA CRIAÇÃO DE NOVAS AGÊNCIAS EM UM BANCO
 	 * 
 	 * @return void
 	 */
-
 	public void  criarAgencia() {
 
 		Agencia agenciaNova = new Agencia();
@@ -72,46 +71,73 @@ public class Banco {
 		agenciaNova.setCodigo(codigoAleatorio.nextInt(100));
 		this.agencia[novaAgencia] = agenciaNova;
 		novaAgencia++;
-		System.out.println("agencia "+novaAgencia);
-		System.out.println(agenciaNova.getCodigo());
+		System.out.println("código da agência: "+agenciaNova.getCodigo());
 	}
 
 
-	/**Método para cadastro de novos clientes
+	/**MÉTODO PARA CADASTRO DE NOVOS CLIENTES
 	 * 
 	 * @param nome
 	 * @param idade
 	 */
-
-	public void cadastrarCliente(String nome, int idade) {
+	public void cadastrarCliente(Cliente cliente) {
 		int i;
 
 		if (novaAgencia == 0) 
 			System.out.println("Impossível cadastrar o cliente, primeiro crie uma agência!");
 		else{
 			System.out.println("Escolha o número referente a uma das agências abaixo:");
-			
+
 			for (i = 0; i < novaAgencia; i++) {
 				System.out.println("Agência código: "+agencia[i].getCodigo());
 			}	
 
 			agenciaEscolhida = input.nextInt();
 			System.out.println("Agência escolhida: "+agenciaEscolhida);
-			
+
 			for (int j = 0; j < novaAgencia; j++) {
-				if (agencia[novaAgencia].getCodigo() == agenciaEscolhida) {
-					agencia[j].cadastrarCliente(nome, idade);
+				if (agencia[j].getCodigo() == agenciaEscolhida) {
+					agencia[j].setCliente(cliente);;
 				}				
 			}
 		}
 	}
-
-	/**Método para calcular o montante de dinheiro em um banco,
-	 * considerando a soma dos montantes de cada agência existente.
+	
+	
+	/**MÉTODO QUE MOSTRA PARA O USUÁRIO O CÓDIGO DAS AGÊNCIAS QUE JÁ EXISTEM
 	 * 
-	 * @return double - somatório dos montantes das agências
+	 * @return void
 	 */
+	public void codigosDasAgencias() {
+		for (int i = 0; i < novaAgencia; i++) {
+			System.out.println("Agência código: "+agencia[i].getCodigo());
+		}
 
+	}
+
+	
+	/**MÉTODO PARA PROCURAR UMA DETERMINADA AGÊNCIA ATRAVÉS DO CÓDIGO INFORMADO
+	 *  PELO USUÁRIO
+	 * 
+	 * @param codigo
+	 * @return O MONTANTE DE UMA AGÊNCIA
+	 */
+	public double procurarAgencia(int codigo) {
+		int j;
+
+		for (j = 0; j < novaAgencia; j++) {
+			if (agencia[j].getCodigo() == codigo) 
+				agencia[j].MontanteNaAgencia();				
+		}	
+		return agencia[j].MontanteNaAgencia();
+	}
+
+	
+	/**MÉTODO PARA CALCULAR O MONTANTE DE DINHEIRO EM UM BANCO,
+	 * CONSIDERANDO A SOMA DOS MONTANTES DE CADA AGÊNCIA EXISTENTE.
+	 * 
+	 * @return double - SOMATÓRIO DOS MONTANTES DAS AGÊNCIAS
+	 */
 	public double CalcularMontante(){
 		double somaMontante = 0;
 
@@ -123,14 +149,13 @@ public class Banco {
 	}
 
 
-	/**Método que mostra o saldo de um cliente em uma agência, 
-	 * através de uma busca pelo id do cliente
+	/**MÉTODO QUE MOSTRA O SALDO DE UM CLIENTE EM UMA AGÊNCIA,
+	 * ATRAVÉS DE UMA BUSCA PELO ID DO CLIENTE 
 	 * 
-	 * @param idCliente - número de identificação do cliente
-	 * @param codigo - código da agência
-	 * @return - saldo
+	 * @param idCliente - NÚMERO DE IDENTIFICAÇÃO DO CLIENTE
+	 * @param codigo - CÓDIGO DA AGÊNCIA
+	 * @return saldo
 	 */
-
 	public double exibirSaldoB(int idCliente, int codigo) {
 		double saldo = 0;
 
@@ -143,5 +168,5 @@ public class Banco {
 
 		return saldo;
 	}
-
+	
 }

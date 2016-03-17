@@ -1,7 +1,7 @@
 package br.ufs.projeto;
 /**
  * 
- * @author 
+ * @author DANIELA DOS SANTOS E TAYLAN NALIMAR CRUZ CELESTINO
  *@since 11/03/2016
  */
 
@@ -13,7 +13,7 @@ public class Cliente {
 	private int numIdentificador;
 	private int i;
 	private int j;
-	private int quantContas;
+	private int quantContas = 0;
 
 	public Cliente(String nome, int idade, Conta conta, int numIdentificador) {
 		this.nome = nome;
@@ -26,7 +26,8 @@ public class Cliente {
 	public Cliente(String nome, int idade, int numIdentificador) {
 		this.nome = nome;
 		this.idade = idade;
-		this.numIdentificador = numIdentificador;
+		this.numIdentificador = numIdentificador; 
+		System.out.println("Cliente cadastrado com sucesso!");
 	}
 	
 	public Cliente(String nome, int idade, Conta conta1, Conta conta2, int numIdentificador) {
@@ -74,4 +75,6 @@ public class Cliente {
 	public int getQuantContas() {
 		return quantContas;
 	}
+	
+	
 }

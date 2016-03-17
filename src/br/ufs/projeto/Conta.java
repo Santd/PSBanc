@@ -2,7 +2,7 @@ package br.ufs.projeto;
 
 /**
  * 
- * @author
+ * @author DANIELA DOS SANTOS E TAYLAN NALIMAR CRUZ CELESTINO
  * @since 11/03/2016
  *
  */
@@ -15,6 +15,10 @@ public class Conta {
 	public Conta(int codigo, double saldo) {
 		this.codigo = codigo;
 		this.saldo = saldo;
+	}
+	
+	public Conta() {
+		
 	}
 
 	public void setCodigo(int codigo) {

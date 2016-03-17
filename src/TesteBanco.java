@@ -1,8 +1,8 @@
-import java.util.Scanner;
 import br.ufs.projeto.*;
+import java.util.Scanner;
 /**
  * 
- * @author
+ * @author DANIELA DOS SANTOS E TAYLAN NALIMAR CRUZ CELESTINO
  * @since  11/03/2016
  *
  */
