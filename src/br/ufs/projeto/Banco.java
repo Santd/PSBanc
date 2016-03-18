@@ -86,14 +86,14 @@ public class Banco {
 		if (novaAgencia == 0) 
 			System.out.println("Impossível cadastrar o cliente, primeiro crie uma agência!");
 		else{
-			System.out.println("Escolha o número referente a uma das agências abaixo:");
+			System.out.println("Escolha o número referente a uma das agências abaixo para cadastrar o cliente:");
 
 			for (i = 0; i < novaAgencia; i++) {
 				System.out.println("Agência código: "+agencia[i].getCodigo());
 			}	
 
 			agenciaEscolhida = input.nextInt();
-			System.out.println("Agência escolhida: "+agenciaEscolhida);
+			System.out.println("Cliente cadastrado na agência código: "+agenciaEscolhida);
 
 			for (int j = 0; j < novaAgencia; j++) {
 				if (agencia[j].getCodigo() == agenciaEscolhida) {

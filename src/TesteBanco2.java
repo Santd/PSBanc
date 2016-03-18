@@ -29,12 +29,11 @@ public class TesteBanco2 {
 		do{
 			do {
 				System.out.println(banco2.getNome()+"\nCódigo: "+banco2.getCodigo()+"\n");
-				System.out.println("Menu\n");
+				System.out.println("Menu de cadastros\n");
 				System.out.println("Digite uma das seguintes opções:");
 				System.out.println("1- Criar Agência");
 				System.out.println("2- Cadastrar cliente com conta simples");
-				System.out.println("3- Cadastrar clientes com conta conjunta");
-				System.out.println("4- Cadastrar clinte com mais de uma conta");
+				
 				opcao = input.nextByte();
 
 				switch (opcao) {
@@ -51,16 +50,17 @@ public class TesteBanco2 {
 						nome = input.next();input.nextLine();
 						System.out.println("Digite a idade: ");
 						idade = input.nextInt();
+						System.out.println("Digite o id do cliente: ");
+						idCliente = input.nextInt();
 						System.out.println("Digite o valor do saldo inicial");
 						saldoInicial = input.nextDouble();
 
 						Conta conta = new Conta(codigoContaAleatorio.nextInt(200), saldoInicial);
-						Cliente cliente = new Cliente(nome, idade, conta, idAleatorio.nextInt(200));
+						Cliente cliente = new Cliente(nome, idade, conta, idCliente);
 
 
 						banco2.cadastrarCliente(cliente);
 
-						System.out.println();
 						System.out.println();
 						System.out.println("Para sair do menu aperte '1' para continuar aperte '0' ");
 						sairContinuar = input.nextByte();
@@ -69,6 +69,7 @@ public class TesteBanco2 {
 
 					} while (sairContinuar != 1);
 
+					System.out.println("Você saiu do menu de cadastro de clientes!");
 					break;
 
 				case 3:	
