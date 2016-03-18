@@ -46,8 +46,8 @@ public class TesteBanco {
 			System.out.println("3- Exibir o saldo de um cliente em uma agência");
 			System.out.println("4- Exibir o saldo de um cliente em várias agências ");
 			System.out.println("5- Fazer transferências entre clientes");
-			System.out.println("6- Fazer pagamento de contas");
-			System.out.println("7- Exibir um extrato detalhado de um cliente");
+			//System.out.println("6- Fazer pagamento de contas");
+			//System.out.println("7- Exibir um extrato detalhado de um cliente");
 			opcao = input.nextInt();
 
 			switch (opcao) {
@@ -93,15 +93,7 @@ public class TesteBanco {
 				System.out.println(cliente1.getConta()[0].getSaldo());
 	
 				break;
-
-			case 6:
-				
-				break;
-
-			case 7:
-
-				break;
-
+	
 			default:
 				System.out.println("Opção inválida!");
 				break;
