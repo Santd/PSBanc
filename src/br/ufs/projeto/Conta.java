@@ -37,11 +37,22 @@ public class Conta {
 		return saldo;
 	}
 
+	
+	/**MÉTODO PARA DEPOSITAR DINHEIRO EM UMA CONTA
+	 * 
+	 * @param valor
+	 * @return 	saldo
+	 */
 	public double depositar( double valor){
 
 		return saldo = saldo + valor;
-	}//deposita na conta
+	}
 
+	
+	/**MÉTODO PARA SACAR DINHEIRO DE UMA CONTA
+	 * 
+	 * @param valor
+	 */
 	public void sacar( double valor){
 
 		double novoSaldo = saldo - valor;
@@ -54,8 +65,14 @@ public class Conta {
 
 			System.out.println("Saldo insuficiente!");
 
-	}//método para sacar
+	}
 	
+	
+	/**MÉTODO PARA FAZER TRANSFERÊNCIAS ENTRE CLIENTES
+	 * 
+	 * @param valorTransferido
+	 * @param destinatario
+	 */
 	public void fazerTransferencia(double valorTransferido, Conta destinatario){
 		this.saldo = this.saldo - valorTransferido;
 		destinatario.saldo = destinatario.saldo + valorTransferido; 

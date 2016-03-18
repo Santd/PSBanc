@@ -102,8 +102,8 @@ public class Banco {
 			}
 		}
 	}
-	
-	
+
+
 	/**MÉTODO QUE MOSTRA PARA O USUÁRIO O CÓDIGO DAS AGÊNCIAS QUE JÁ EXISTEM
 	 * 
 	 * @return void
@@ -115,24 +115,25 @@ public class Banco {
 
 	}
 
-	
+
 	/**MÉTODO PARA PROCURAR UMA DETERMINADA AGÊNCIA ATRAVÉS DO CÓDIGO INFORMADO
 	 *  PELO USUÁRIO
 	 * 
 	 * @param codigo
 	 * @return O MONTANTE DE UMA AGÊNCIA
 	 */
-	public double procurarAgencia(int codigo) {
+	public void procurarAgencia(int codigo) {
 		int j;
 
 		for (j = 0; j < novaAgencia; j++) {
-			if (agencia[j].getCodigo() == codigo) 
-				agencia[j].MontanteNaAgencia();				
+			if (agencia[j].getCodigo() == codigo) {
+				System.out.println("Montante de dinheiro aplicado na Agência "
+						+agencia[j].getCodigo()+" é R$ "+agencia[j].MontanteNaAgencia());
+			}
 		}	
-		return agencia[j].MontanteNaAgencia();
 	}
 
-	
+
 	/**MÉTODO PARA CALCULAR O MONTANTE DE DINHEIRO EM UM BANCO,
 	 * CONSIDERANDO A SOMA DOS MONTANTES DE CADA AGÊNCIA EXISTENTE.
 	 * 
@@ -156,7 +157,7 @@ public class Banco {
 	 * @param codigo - CÓDIGO DA AGÊNCIA
 	 * @return saldo
 	 */
-	public double exibirSaldoB(int idCliente, int codigo) {
+	public double exibirSaldo(int idCliente, int codigo) {
 		double saldo = 0;
 
 		for (int i = 0; i < novaAgencia; i++) {
@@ -168,5 +169,25 @@ public class Banco {
 
 		return saldo;
 	}
-	
+
+
+	/**MÉTODO PARA EXIBIR O SALDO DE VÁRIAS CONTAS AO MESMO TEMPO DE UM CLIENTE
+	 * 
+	 * @param idCliente
+	 */
+	public void exibirSaldoEmVariasAgencias(int idCliente) {
+
+		for (int i = 0; i < novaAgencia; i++) {
+			for (int j = 0; j < agencia[i].novoCliente; j++){
+				if (agencia[i].getCliente()[j].getNumeroIdentificador() == idCliente) {
+					for (int k = 0; k < agencia[i].getCliente()[j].getQuantContas(); k++) {
+						System.out.println("Saldo do cliente na agência "+agencia[i].getCodigo()+
+								" é de R$ "+agencia[i].getCliente()[j].getConta()[k].getSaldo());
+					}					
+				}
+			}
+		}
+
+	}
 }
+

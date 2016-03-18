@@ -12,7 +12,6 @@ public class Cliente {
 	private Conta[] conta = new Conta[10];
 	private int numIdentificador;
 	private int i;
-	private int j;
 	private int quantContas = 0;
 
 	public Cliente(String nome, int idade, Conta conta, int numIdentificador) {
@@ -48,8 +47,9 @@ public class Cliente {
 	}
 	
 	public void setConta(Conta conta) {
-		this.conta[j] = conta;
-		j++;
+		i++;
+		this.conta[i] = conta;
+		this.quantContas++;
 	}
 	
 	public void setNumeroIdentificador(int numeroIdentificador ) {
@@ -75,6 +75,5 @@ public class Cliente {
 	public int getQuantContas() {
 		return quantContas;
 	}
-	
 	
 }

@@ -39,8 +39,8 @@ public class Agencia {
 	public Cliente[] getCliente() {
 		return cliente;
 	}
-	
-	
+
+
 	/**CRIAÇÃO E CADASTRO DE NOVOS CLIENTES COM NÚMEROS DE IDENTIFICAÇÃO ALEATÓRIO
 	 * 
 	 * @param nome
@@ -49,10 +49,10 @@ public class Agencia {
 	public void cadastrarCliente(String nome, int idade) {
 		Random idAleatorio = new Random();
 		Cliente cliente = new Cliente(nome, idade, idAleatorio.nextInt(200));
-		
+
 		setCliente(cliente);	
 	}
-	
+
 	/**CÁLCULO DO MONTANTE DE DINHEIRO NA AGÊNCIA
 	 * 
 	 * @return somaMontanteAgencia
@@ -73,7 +73,7 @@ public class Agencia {
 		return somaMontanteAgencia;
 	}
 
-	
+
 	/**MÉTODO QUE BUSCA UM DETERMINADO CLIENTE NA AGÊNCIA ATRAVÉS DO ID E RETORNA O SEU SALDO
 	 * "USADA NA CLASSE TESTEBANCO"
 	 * @param idCliente
@@ -105,7 +105,7 @@ public class Agencia {
 		return saldo;
 	}
 
-	
+
 	/**MÉTODO QUE PROCURAR UM DETERMINADO CLIENTE NA AGÊNCIA ATRAVÉS DO ID E RETORNA O SEU SALDO
 	 * "USADA NA CLASSE TESTEBANCO2"
 	 * 
@@ -137,4 +137,20 @@ public class Agencia {
 
 		return saldo;
 	}	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
